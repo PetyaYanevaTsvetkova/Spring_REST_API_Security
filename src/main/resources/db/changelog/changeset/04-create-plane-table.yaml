@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-airport-table
+      author: Petya
+      changes:
+        - createTable:
+            tableName: planes
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                   name: destination
+                   type: varchar(200)
+                   constraints:
+                     nullable: false
+              - column:
+                  name: airport_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_airport_planes
+                    referencedColumnNames: id
+                    referencedTableName: airports
+
+

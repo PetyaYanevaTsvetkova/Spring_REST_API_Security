@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-airport-table
+      author: Petya
+      changes:
+        - createTable:
+            tableName: weather
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: city
+                  type: varchar(200)
+              - column:
+                  name: temp
+                  type: double
+
+

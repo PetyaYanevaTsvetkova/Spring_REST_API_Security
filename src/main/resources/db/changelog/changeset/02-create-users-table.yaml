@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-user-table
+      author: Petya
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: password
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: last_name
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: phone
+                  type: varchar(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_role_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_role_users
+                    referencedColumnNames: id
+                    referencedTableName: roles
+

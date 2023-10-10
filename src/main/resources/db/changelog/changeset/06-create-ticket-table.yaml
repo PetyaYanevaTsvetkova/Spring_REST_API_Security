@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-airport-table
+      author: Petya
+      changes:
+        - createTable:
+            tableName: tickets
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                   foreignKeyName: fk_order_tickets
+                   referencedColumnNames: id
+                   referencedTableName: orders
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_user_ticket
+                    referencedColumnNames: id
+                    referencedTableName: users
+              - column:
+                  name: plane_id
+                  type: bigint
+                  constraints:
+                    foreignKeyName: fk_plane_tickets
+                    referencedColumnNames: id
+                    referencedTableName: planes
+              - column:
+                  name: initial_price
+                  type: int
+
+
+

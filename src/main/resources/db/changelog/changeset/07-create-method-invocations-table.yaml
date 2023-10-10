@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-airport-table
+      author: Petya
+      changes:
+        - createTable:
+            tableName: method_invocations
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: signature
+                  type: varchar(200)
+              - column:
+                  name: argument
+                  type: varchar(200)
+              - column:
+                  name: return_value
+                  type: varchar(200)
+              - column:
+                  name: error
+                  type: varchar(200)
+
+

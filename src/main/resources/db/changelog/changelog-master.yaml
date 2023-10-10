@@ -1,0 +1,18 @@
+databaseChangeLog:
+   - include:
+      file: db/changelog/changeset/01-create-role-table.yaml
+   - include:
+      file: db/changelog/changeset/02-create-users-table.yaml
+   - include:
+      file: db/changelog/changeset/03-create-airport-table.yaml
+   - include:
+      file: db/changelog/changeset/04-create-plane-table.yaml
+   - include:
+      file: db/changelog/changeset/05-create-order-table.yaml
+   - include:
+      file: db/changelog/changeset/06-create-ticket-table.yaml
+   - include:
+      file: db/changelog/changeset/07-create-method-invocations-table.yaml
+   - include:
+      file: db/changelog/changeset/08-create-weather-table.yaml
+
